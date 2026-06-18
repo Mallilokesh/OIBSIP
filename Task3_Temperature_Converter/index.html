@@ -1,1 +1,164 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            min-height:100vh;
+            background:linear-gradient(135deg,#4facfe,#00f2fe);
+        }
+
+        .container{
+            background:white;
+            padding:30px;
+            border-radius:15px;
+            box-shadow:0 10px 25px rgba(0,0,0,0.2);
+            width:350px;
+            text-align:center;
+        }
+
+        h1{
+            margin-bottom:20px;
+            color:#333;
+        }
+
+        input, select{
+            width:100%;
+            padding:12px;
+            margin:10px 0;
+            border:1px solid #ccc;
+            border-radius:8px;
+            font-size:16px;
+        }
+
+        button{
+            width:100%;
+            padding:12px;
+            background:#007bff;
+            color:white;
+            border:none;
+            border-radius:8px;
+            cursor:pointer;
+            font-size:16px;
+            margin-top:10px;
+        }
+
+        button:hover{
+            background:#0056b3;
+        }
+
+        .result{
+            margin-top:20px;
+            font-size:20px;
+            font-weight:bold;
+            color:#222;
+        }
+
+        .error{
+            color:red;
+            margin-top:10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🌡 Temperature Converter</h1>
+
+    <input type="text" id="temperature" placeholder="Enter temperature">
+
+    <select id="conversion">
+        <option value="CtoF">Celsius → Fahrenheit</option>
+        <option value="FtoC">Fahrenheit → Celsius</option>
+        <option value="CtoK">Celsius → Kelvin</option>
+        <option value="KtoC">Kelvin → Celsius</option>
+        <option value="FtoK">Fahrenheit → Kelvin</option>
+        <option value="KtoF">Kelvin → Fahrenheit</option>
+    </select>
+
+    <button onclick="convertTemperature()">
+        Convert
+    </button>
+
+    <div class="error" id="error"></div>
+    <div class="result" id="result"></div>
+</div>
+
+<script>
+function convertTemperature() {
+
+    let temp = document.getElementById("temperature").value;
+    let conversion = document.getElementById("conversion").value;
+
+    let result = document.getElementById("result");
+    let error = document.getElementById("error");
+
+    result.innerHTML = "";
+    error.innerHTML = "";
+
+    if (temp === "" || isNaN(temp)) {
+        error.innerHTML = "Please enter a valid number!";
+        return;
+    }
+
+    temp = parseFloat(temp);
+
+    let converted;
+
+    switch(conversion) {
+
+        case "CtoF":
+            converted = (temp * 9/5) + 32;
+            result.innerHTML =
+                `${temp} °C = ${converted.toFixed(2)} °F`;
+            break;
+
+        case "FtoC":
+            converted = (temp - 32) * 5/9;
+            result.innerHTML =
+                `${temp} °F = ${converted.toFixed(2)} °C`;
+            break;
+
+        case "CtoK":
+            converted = temp + 273.15;
+            result.innerHTML =
+                `${temp} °C = ${converted.toFixed(2)} K`;
+            break;
+
+        case "KtoC":
+            converted = temp - 273.15;
+            result.innerHTML =
+                `${temp} K = ${converted.toFixed(2)} °C`;
+            break;
+
+        case "FtoK":
+            converted = (temp - 32) * 5/9 + 273.15;
+            result.innerHTML =
+                `${temp} °F = ${converted.toFixed(2)} K`;
+            break;
+
+        case "KtoF":
+            converted = (temp - 273.15) * 9/5 + 32;
+            result.innerHTML =
+                `${temp} K = ${converted.toFixed(2)} °F`;
+            break;
+    }
+}
+</script>
+
+</body>
+</html>
