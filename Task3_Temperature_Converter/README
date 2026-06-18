@@ -1,0 +1,89 @@
+# 🌡️ Temperature Converter
+
+A simple and responsive Temperature Converter web application built using HTML, CSS, and JavaScript. This application allows users to convert temperatures between Celsius, Fahrenheit, and Kelvin with real-time validation and accurate results.
+
+## 🚀 Live Demo
+
+🔗 https://mallilokesh.github.io/OIBSIP/Task3_Temperature_Converter/
+
+## 📌 Features
+
+- Convert Celsius to Fahrenheit
+- Convert Fahrenheit to Celsius
+- Convert Celsius to Kelvin
+- Convert Kelvin to Celsius
+- Convert Fahrenheit to Kelvin
+- Convert Kelvin to Fahrenheit
+- Input validation for numeric values
+- User-friendly interface
+- Responsive design
+
+## 🛠️ Technologies Used
+
+- HTML5
+- CSS3
+- JavaScript
+
+## 📂 Project Structure
+
+```text
+Task3_Temperature_Converter/
+│
+├── index.html
+├── style.css
+├── script.js
+└── README.md
+```
+
+## 📖 How It Works
+
+1. Enter a temperature value.
+2. Select the conversion type from the dropdown menu.
+3. Click the **Convert** button.
+4. The converted temperature will be displayed instantly.
+
+## 🧮 Conversion Formulas
+
+### Celsius to Fahrenheit
+
+```text
+°F = (°C × 9/5) + 32
+```
+
+### Fahrenheit to Celsius
+
+```text
+°C = (°F − 32) × 5/9
+```
+
+### Celsius to Kelvin
+
+```text
+K = °C + 273.15
+```
+
+### Kelvin to Celsius
+
+```text
+°C = K − 273.15
+```
+
+## 🎯 Learning Outcomes
+
+Through this project, I learned:
+
+- DOM Manipulation using JavaScript
+- Event Handling
+- Form Validation
+- Temperature Conversion Logic
+- Responsive Web Design
+
+## 👨‍💻 Author
+
+**Malli Lokesh**
+
+- GitHub: https://github.com/Mallilokesh
+
+## ⭐ Acknowledgement
+
+This project was developed as part of the **Oasis Infobyte Web Development Internship Program**.
